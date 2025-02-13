@@ -1,0 +1,61 @@
+body {
+  font-family: "Red Rose", serif;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ensures full-page pin */
+  position: relative;
+  perspective: 2000px;
+}
+
+.card {
+  background: #222;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0.5;
+  transform: scale(0) translateZ(0);
+  transform-origin: center;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 0.1s ease-in-out;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 500;
+  background: radial-gradient(
+    54.71% 54.71% at 50% 40.97%,
+    rgba(11, 11, 11, 0) 0%,
+    #0b0b0b 100%
+  );
+  filter: blur(50);
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
